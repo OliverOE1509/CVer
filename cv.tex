@@ -1,0 +1,252 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    }
+    {
+    \end{minipage}
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}
+    }
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Oliver Ekeberg} \\[7.5pt]
+\href{https://github.com/OliverOE1509}{\raisebox{-0.05\height}\faGithub\ OliverOE1509} \ $|$ \ 
+\href{https://linkedin.com/in/oliver-ekeberg}{\raisebox{-0.05\height}\faLinkedin\ oliver-ekeberg} \ $|$ \ 
+\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
+\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
+\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +47.941.35.068} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+
+Im currently studying applied mathematics, majoring in computational science. My dream is to become an AI researcher. With a background from data science and business applications, I am gaining additional theoretical depth in mathematics
+%Experience
+\section{Work Experience}
+
+\begin{jobshort}{Part-time Worker, REMA 1000}{Oct 2024 -- present}
+Gained practical experience in one of the busiest stores in the region:
+\begin{itemize}[leftmargin=*]
+    \item Delivered efficient customer service in a high-pressure environment.
+    \item Collaborated closely with colleagues to ensure smooth daily operations.
+    \item Strengthened communication and problem-solving skills under stress.
+\end{itemize}
+\end{jobshort}
+
+\begin{joblong}{Risk Analyst Intern, BISO Invest}{Sep 2023 -- Aug 2024}
+    \item Developed an API (Python, Wireshark) to retrieve and format portfolio holdings into JSON, enabling detailed analysis and stress testing.  
+    \item Conducted statistical analysis of portfolio returns, including parameter fitting and volatility forecasting, to support risk management decisions.  
+    \item Enhanced sector exposure analysis by combining quantitative data with sentiment analysis of financial news, improving assessment of portfolio risks.  
+\end{joblong}
+
+
+  
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{Robotic Arm with Lamp} & \hfill \href{https://github.com/OliverOE1509/robotic-arm}{GitHub} & 2025 \\[3.75pt]
+\multicolumn{3}{@{}p{\linewidth}@{}}{Designed and 3D-printed a 5-DOF robotic arm in FreeCAD, powered by Raspberry Pi + servo motors. Integrated control system for positioning and attached lamp as an end effector. Doing this to learn more about electronics. Planning to expand to control the arm with voice input, with for instance Ollama and Whisper APIs} \\
+\\
+\textbf{Reinforcement Learning Game} & \hfill \href{https://github.com/OliverOE1509/}{GitHub} & 2025 \\[3.75pt]
+\multicolumn{3}{@{}p{\linewidth}@{}}{Created a custom 2D two-player game environment. Implemented reinforcement learning agents to explore cooperative/competitive strategies, using Gymnasium-compatible APIs. Me and my coworker, Daniel Gr{\o}nhaug, plan to extend the work to 3D real-world drones. This research is a part of the AI Fight Club competition hosted by Lockheed Martin} \\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+
+2021 -- 2024 & 
+BSc (Data Science for Business), \textbf{BI Norwegian Business School} 
+\hfill \normalsize (GPA: 4.0/5.0) \\
+& \begin{minipage}[t]{\linewidth}
+    \textit{Relevant courses:}  
+    \begin{itemize}[leftmargin=*]
+        \item Machine Learning – built models for classification and prediction.  
+        \item Data Management – designed and optimized SQL databases.  
+        \item Business Analytics – applied statistical methods to real business cases.  
+    \end{itemize}
+   \end{minipage} \\[1ex]
+
+2024 -- present & 
+BSc (Applied Mathematics, Computational Science), \textbf{University of Oslo}  
+\hfill (GPA: 4.0/5.0) \\
+& \begin{minipage}[t]{\linewidth}
+    \textit{Relevant courses:}  
+    \begin{itemize}[leftmargin=*]
+        \item Numerical Analysis – implemented ODE/PDE solvers in Python.  
+        \item Advanced Linear Algebra - built up theoretical framework from the ground and up. Major topics covered: Functional analysis in vector spaces, inner product spaces, fourier analysis  
+        \item Control theory - As a side note, Im taking research courses in Control Systems and Cybernetics, as a fun application of mathematics, with a high relevance to computational science 
+    \end{itemize}
+   \end{minipage} \\
+
+\end{tabularx}
+
+
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+\begin{refsection}[citations.bib]
+\nocite{*}
+\printbibliography[heading=none]
+\end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
+Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+\end{tabularx}
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
