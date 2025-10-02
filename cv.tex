@@ -1,4 +1,3 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
 %	The MIT License (MIT)
 %
 %	Copyright (c) 2021 Jitin Nair
@@ -26,7 +25,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -53,7 +52,7 @@
 %other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
 
 %tabularx environment
@@ -145,7 +144,7 @@
 % \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
 % \end{tabularx}
 
-\begin{tabularx}{\linewidth}{@{} C @{}}
+\begin{tabularx}{\linewidth}{@{}C@{}}
 \Huge{Oliver Ekeberg} \\[7.5pt]
 \href{https://github.com/OliverOE1509}{\raisebox{-0.05\height}\faGithub\ OliverOE1509} \ $|$ \ 
 \href{https://linkedin.com/in/oliver-ekeberg}{\raisebox{-0.05\height}\faLinkedin\ oliver-ekeberg} \ $|$ \ 
@@ -161,23 +160,24 @@
 %Interests/ Keywords/ Summary
 \section{Summary}
 
-Im currently studying applied mathematics, majoring in computational science. My dream is to become an AI researcher. With a background from data science and business applications, I am gaining additional theoretical depth in mathematics
+Mathematics and data science student passionate about artificial intelligence, machine learning, and high-performance computing. Skilled in Python, SQL, and statistical modeling, with hands-on experience in Docker, Kubernetes, CUDA, and GPU-accelerated training. Strong interest in applying advanced AI and computational methods to quantitative finance and large-scale data systems.
 %Experience
 \section{Work Experience}
 
-\begin{jobshort}{Part-time Worker, REMA 1000}{Oct 2024 -- present}
-Gained practical experience in one of the busiest stores in the region:
-\begin{itemize}[leftmargin=*]
-    \item Delivered efficient customer service in a high-pressure environment.
-    \item Collaborated closely with colleagues to ensure smooth daily operations.
-    \item Strengthened communication and problem-solving skills under stress.
-\end{itemize}
-\end{jobshort}
+\begin{joblong}{Risk Analyst, BISO Invest}{Sep 2023 -- Aug 2024}
+    \item Developed an API (Python, Wireshark) to extract and format portfolio holdings for automated stress testing.  
+    \item Built quantitative models for risk analysis, including volatility forecasting and parameter fitting.  
+\end{joblong}
 
-\begin{joblong}{Risk Analyst Intern, BISO Invest}{Sep 2023 -- Aug 2024}
-    \item Developed an API (Python, Wireshark) to retrieve and format portfolio holdings into JSON, enabling detailed analysis and stress testing.  
-    \item Conducted statistical analysis of portfolio returns, including parameter fitting and volatility forecasting, to support risk management decisions.  
-    \item Enhanced sector exposure analysis by combining quantitative data with sentiment analysis of financial news, improving assessment of portfolio risks.  
+\begin{joblong}{Participant, KPMG x ServiceNow Hackathon}{Feb 2024}
+    \item Collaborated in a team of students and KPMG consultants to design and deliver a functional client solution in ServiceNow.  
+    \item Gained hands-on experience with ServiceNow workflows and rapid prototyping under time pressure.  
+    \item Presented solution to a jury of KPMG partners, ServiceNow experts, and clients.  
+\end{joblong}
+
+\begin{joblong}{Part-time Worker, REMA 1000}{Oct 2024 -- present}
+    \item Delivered customer service in a high-volume retail environment, further strengthening communication skills.  
+    \item Supported daily operations through teamwork and adaptability, while enhancing problem solving skills
 \end{joblong}
 
 
@@ -187,10 +187,15 @@ Gained practical experience in one of the busiest stores in the region:
 
 \begin{tabularx}{\linewidth}{@{}l X r@{}}
 \textbf{Robotic Arm with Lamp} & \hfill \href{https://github.com/OliverOE1509/robotic-arm}{GitHub} & 2025 \\[3.75pt]
-\multicolumn{3}{@{}p{\linewidth}@{}}{Designed and 3D-printed a 5-DOF robotic arm in FreeCAD, powered by Raspberry Pi + servo motors. Integrated control system for positioning and attached lamp as an end effector. Doing this to learn more about electronics. Planning to expand to control the arm with voice input, with for instance Ollama and Whisper APIs} \\
-\\
+\multicolumn{3}{@{}p{\linewidth}@{}}{Designed and 3D-printed a 5-DOF robotic arm in FreeCAD, powered by Raspberry Pi + servo motors. Integrated a control system for positioning and attached a lamp as the end effector. Project developed to gain hands-on experience with electronics and hardware integration.} \\[1ex]
+
 \textbf{Reinforcement Learning Game} & \hfill \href{https://github.com/OliverOE1509/}{GitHub} & 2025 \\[3.75pt]
-\multicolumn{3}{@{}p{\linewidth}@{}}{Created a custom 2D two-player game environment. Implemented reinforcement learning agents to explore cooperative/competitive strategies, using Gymnasium-compatible APIs. Me and my coworker, Daniel Gr{\o}nhaug, plan to extend the work to 3D real-world drones. This research is a part of the AI Fight Club competition hosted by Lockheed Martin} \\
+\multicolumn{3}{@{}p{\linewidth}@{}}{Created a custom 2D two-player game environment. Implemented reinforcement learning agents to explore cooperative and competitive strategies using Gymnasium-compatible APIs. Collaborated with Daniel Gr{\o}nhaug to extend the framework towards real-world 3D drone control as part of the AI Fight Club competition hosted by Lockheed Martin.} \\
+
+\textbf{Game Theory Research (Quantitative Economics)} & 2023 \\[3.75pt]
+\multicolumn{3}{@{}p{\linewidth}@{}}{Co-authored a 20+ page research paper applying game theory to the Prisoner’s Dilemma. Explored the impact of alternative strategies on cooperative and competitive outcomes, and analyzed their influence on equilibrium dynamics. Our research used 4 different strategies, and analyze how the winning strategy of each game depended on discount rate} \\[1ex]
+
+
 \end{tabularx}
 
 
@@ -198,31 +203,23 @@ Gained practical experience in one of the busiest stores in the region:
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
+\begin{tabularx}{\linewidth}{@{}l X@{}}
 
 2021 -- 2024 & 
-BSc (Data Science for Business), \textbf{BI Norwegian Business School} 
-\hfill \normalsize (GPA: 4.0/5.0) \\
-& \begin{minipage}[t]{\linewidth}
-    \textit{Relevant courses:}  
-    \begin{itemize}[leftmargin=*]
-        \item Machine Learning – built models for classification and prediction.  
-        \item Data Management – designed and optimized SQL databases.  
-        \item Business Analytics – applied statistical methods to real business cases.  
-    \end{itemize}
-   \end{minipage} \\[1ex]
+BSc, Data Science for Business, \textbf{BI Norwegian Business School} 
+\hfill (GPA: 4.0/5.0) \\
+& \textit{Selected courses:} 
+\href{https://programmeinfo.bi.no/en/course/EBA-3530/2023-spring}{Machine Learning}, 
+\href{https://programmeinfo.bi.no/nb/course/EBA-3650/2024-spring}{Quantitative Economics}, 
+\href{https://programmeinfo.bi.no/nb/course/EBA-3420/2022-spring}{Programming in Python \& SQL} \\[1ex]
 
 2024 -- present & 
-BSc (Applied Mathematics, Computational Science), \textbf{University of Oslo}  
+BSc, Applied Mathematics and Computational Science, \textbf{University of Oslo} 
 \hfill (GPA: 4.0/5.0) \\
-& \begin{minipage}[t]{\linewidth}
-    \textit{Relevant courses:}  
-    \begin{itemize}[leftmargin=*]
-        \item Numerical Analysis – implemented ODE/PDE solvers in Python.  
-        \item Advanced Linear Algebra - built up theoretical framework from the ground and up. Major topics covered: Functional analysis in vector spaces, inner product spaces, fourier analysis  
-        \item Control theory - As a side note, Im taking research courses in Control Systems and Cybernetics, as a fun application of mathematics, with a high relevance to computational science 
-    \end{itemize}
-   \end{minipage} \\
+& \textit{Selected courses:} 
+\href{https://www.uio.no/studier/emner/matnat/math/MAT3110/h25/index.html}{Numerical Analysis}, 
+\href{https://www.uio.no/studier/emner/matnat/math/MAT1125/h25/index.html}{Advanced Linear Algebra}, 
+\href{https://www.uio.no/studier/emner/matnat/its/TEK4090/h25/index.html}{Control Theory \& Systems} \\
 
 \end{tabularx}
 
@@ -242,8 +239,11 @@ BSc (Applied Mathematics, Computational Science), \textbf{University of Oslo}
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+Programming & Python (NumPy, Pandas, Matplotlib, Scikit-learn, PyTorch), SQL, C++ \\
+AI \& Data Science & Deep Learning, Reinforcement Learning, NLP \\
+Mathematics \& Modeling & Linear Algebra, Numerical Analysis, Probability, Time Series, Optimization \\
+Computing \& Tools & Docker, Kubernetes, Git/Github, Linux, LaTeX, CUDA, GPU-accelerated training \\
+Finance \& Applications & Risk Management, Portfolio Analysis, Volatility Forecasting, Stress Testing \\
 \end{tabularx}
 
 \vfill
