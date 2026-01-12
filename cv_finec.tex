@@ -1,0 +1,262 @@
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,10pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.4\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+
+% job listing environments
+% job listing environments
+\newenvironment{jobshort}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.5pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    }
+    {
+    \end{minipage}
+    }
+
+\newenvironment{joblong}[2]
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.5pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=0.7em, itemsep=1pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}
+    }
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{}C@{}}
+\Huge{Oliver Ekeberg} \\[7.5pt]
+\href{https://github.com/OliverOE1509}{\raisebox{-0.05\height}\faGithub\ OliverOE1509} \ $|$ \ 
+\href{https://linkedin.com/in/oliver-ekeberg}{\raisebox{-0.05\height}\faLinkedin\ oliver-ekeberg} \ $|$ \ 
+\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ oliveroekeberg@gmail.com} \ $|$ \ 
+\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +47 941 35 068} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+
+Quantitative student in Applied Mathematics and Data Science with strong interest in energy markets, portfolio management, and trading. Experienced in Python-based data analysis, risk modeling, and automation of portfolio analytics. Motivated to apply quantitative methods to power markets, renewables, and commodity portfolios.
+%Experience
+\section{Work Experience}
+
+
+\begin{joblong}{Risk Analyst, BISO Invest}{Sep 2023 -- Aug 2024}
+    \item Built Python-based tooling to extract, clean, and structure portfolio holdings for automated risk and exposure analysis.
+    \item Performed portfolio stress testing and scenario analysis under market shocks, volatility shifts, and correlation changes.
+    \item Supported portfolio construction and monitoring through quantitative analysis of risk, return, and diversification effects.
+    \item Worked closely with portfolio managers in a student-managed investment fund environment.
+\end{joblong}
+
+
+\begin{joblong}{Participant, KPMG x ServiceNow Hackathon}{Feb 2024}
+    \item Solved a complex business problem under tight deadlines using structured analysis and rapid prototyping.
+    \item Translated qualitative problem statements into quantitative workflows and decision-support tools.
+    \item Presented solution to senior consultants, partners, and clients.
+\end{joblong}
+
+
+\begin{jobshort}{Part-time Worker, REMA 1000}{Oct 2024 -- present}
+Customer-facing role in a high-pressure retail environment, strengthening communication, reliability, and execution.
+\end{jobshort}
+
+
+  
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{Robotic Arm with Lamp} & \hfill \href{https://github.com/OliverOE1509/robotic-arm}{GitHub} & 2025 \\[3.75pt]
+\multicolumn{3}{@{}p{\linewidth}@{}}{Designed and 3D-printed a 5-DOF robotic arm in FreeCAD, powered by Raspberry Pi + servo motors. Integrated a control system for positioning and attached a lamp as the end effector. Project developed to gain hands-on experience with electronics and hardware integration.} \\[1ex]
+
+\textbf{Reinforcement Learning Environment} & 2025 \\[3.75pt]
+\multicolumn{3}{@{}p{\linewidth}@{}}{
+Designed a reinforcement learning environment with state, action, and reward structures under uncertainty. Focus on long-term reward optimization, risk-reward tradeoffs, and policy learning. Relevant to algorithmic trading, energy dispatch decisions, and storage optimization.
+} \\[1ex]
+
+
+\textbf{Multi-Agent Control \& Optimization (Drone Swarm)} & 2023 \\[3.75pt]
+\multicolumn{3}{@{}p{\linewidth}@{}}{
+Developed decentralized decision-making and optimization algorithms in a multi-agent system under uncertainty. Implemented cost-based bidding mechanisms, Model Predictive Control (MPC), and risk-aware path planning. Strong parallels to portfolio optimization, exposure management, and decision-making under stochastic dynamics.
+} \\[1ex]
+
+
+
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+
+2021 -- 2024 & 
+BSc, Data Science for Business, \textbf{BI Norwegian Business School} 
+\hfill (GPA: 4.0/5.0) \\
+& \textit{Selected courses:} 
+\href{https://programmeinfo.bi.no/en/course/EBA-3530/2023-spring}{Machine Learning}, 
+\href{https://programmeinfo.bi.no/nb/course/EBA-3650/2024-spring}{Quantitative Economics}, 
+\href{https://programmeinfo.bi.no/nb/course/EBA-3420/2022-spring}{Programming in Python \& SQL} \\
+& Focus on quantitative modeling, optimization, and data-driven decision making in economic and financial systems.
+\\[1ex]
+
+2024 -- present & 
+BSc, Applied Mathematics and Computational Science, \textbf{University of Oslo} 
+\hfill (GPA: 4.0/5.0) \\
+& \textit{Selected courses:} 
+\href{https://www.uio.no/studier/emner/matnat/math/MAT3110/h25/index.html}{Numerical Analysis}, 
+\href{https://www.uio.no/studier/emner/matnat/math/MAT1125/h25/index.html}{Advanced Linear Algebra}, 
+\href{https://www.uio.no/studier/emner/matnat/its/TEK4090/h25/index.html}{Control Theory \& Systems} \\
+
+& Emphasis on numerical methods, stochastic systems, and optimization relevant to pricing and portfolio models.
+
+\end{tabularx}
+
+
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+%\section{Publications}
+%\begin{refsection}[citations.bib]
+%\nocite{*}
+%\printbibliography[heading=none]
+%\end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Quantitative Analysis & Portfolio Risk, Scenario Analysis, Optimization, Stochastic Modeling \\
+Programming & Python (NumPy, Pandas, Matplotlib, SciPy), SQL, MATLAB \\
+Markets \& Finance & Portfolio Management, Volatility Modeling, Stress Testing, Asset Pricing \\
+Energy \& Commodities & Power Markets (fundamentals), Renewables, Storage Economics (BESS) \\
+Tools & Excel (advanced), Docker, Git, Linux, LaTeX \\
+\end{tabularx}
+
+\end{document}

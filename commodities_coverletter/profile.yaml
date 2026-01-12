@@ -1,0 +1,35 @@
+name: "Oliver Ekeberg"
+location: "Oslo, Norway"
+phone: "+47 941 35 068"
+email: "oliveroekeberg@gmail.com"
+linkedin: "https://linkedin.com/in/oliver-ekeberg"
+github: "https://github.com/OliverOE1509"
+
+headline: "Quantitative student combining business and applied mathematics; focused on commodity markets, risk, and trading automation."
+
+education:
+  - degree: "BSc, Data Science for Business"
+    school: "BI Norwegian Business School"
+    years: "2021–2024"
+    notes: "Finance/data focus; Python & SQL; quantitative economics."
+  - degree: "BSc, Applied Mathematics and Computational Science (ongoing)"
+    school: "University of Oslo"
+    years: "2024–present"
+    notes: "Numerical methods, probability, optimization, modeling."
+
+core_skills:
+  - "Python (NumPy, Pandas), SQL"
+  - "Market data analysis, time series"
+  - "Risk & scenario analysis, stress testing"
+  - "Automation & reporting pipelines"
+  - "Excel (advanced), Git, Linux, Docker"
+
+markets_interest:
+  - "Commodities (energy, freight/shipping, ags/softs)"
+  - "Derivatives and hedging"
+  - "Fundamentals + quantitative signals"
+  - "Risk limits, PnL drivers, execution"
+
+experience_highlights:
+  - "Built Python tooling for portfolio holdings extraction and automated risk/stress testing."
+  - "Worked in a student-managed investment fund environment supporting portfolio monitoring."

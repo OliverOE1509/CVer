@@ -1,0 +1,15 @@
+bullets:
+  - text: "Built Python tooling to extract, clean, and structure portfolio holdings for automated exposure monitoring and stress testing."
+    tags: ["python", "risk", "portfolio", "automation"]
+  - text: "Performed scenario analysis under market shocks and volatility/correlation changes; communicated key drivers and risk concentration."
+    tags: ["risk", "scenario", "communication"]
+  - text: "Developed repeatable data pipelines and quality checks to support consistent reporting and decision-making."
+    tags: ["data", "automation", "quality"]
+  - text: "Worked comfortably with time series data (feature engineering, aggregation, validation) for analysis and forecasting tasks."
+    tags: ["timeseries", "python", "analysis"]
+  - text: "Applied optimization and modeling thinking to real constraints and trade-offs (limits, costs, uncertainty) in project work."
+    tags: ["optimization", "modeling"]
+  - text: "Used Linux, Git, and Docker to create reproducible environments for analysis and simulation workflows."
+    tags: ["tools", "docker", "linux"]
+  - text: "Strong interest in commodity market structure, supply/demand dynamics, and how fundamentals map into price and risk."
+    tags: ["commodities", "fundamentals", "motivation"]
